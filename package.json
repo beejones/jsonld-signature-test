@@ -1,0 +1,58 @@
+{
+  "name": "jsonld",
+  "version": "0.10.0-preview.23",
+  "description": "Typescript SDK for verifiable credentials",
+  "main": "dist/lib/index.js",
+  "types": "dist/lib/index.d.ts",
+  "scripts": {
+    "build": "tsc --p tsconfig.json",
+    "start": "set JSON_CONFIGURATION=./config.json&& node dist/src/start.js",
+    "test": "nyc jasmine-ts --config=./tests/jasmine.json",
+    "lint": "tslint --fix --project . --config node_modules/ad-did-services-common/tslint.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microsoft/VerifiableCredentials-Verification-SDK-Typescript"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jasmine": "3.3.12",
+    "@types/node": "12.0.0",
+    "@types/node-fetch": "2.5.5",
+    "@types/uuid": "3.4.4",
+    "fetch-mock": "9.3.1",
+    "jasmine": "^3.6.1",
+    "jasmine-reporters": "^2.3.2",
+    "jasmine-spec-reporter": "^4.2.1",
+    "jasmine-ts": "0.3.0",
+    "node-fetch": "2.6.0",
+    "nyc": "^15.1.0",
+    "source-map-support": "0.5.12",
+    "ts-node": "8.1.0",
+    "tslint": "5.16.0",
+    "tslint-config-standard": "8.0.1",
+    "typescript": "3.9.2",
+    "typescript-map": "0.0.7"
+  },
+  "dependencies": {
+    "crypto-ld": "^3.7.0",
+    "jsonld": "^2.0.2",
+    "jsonld-signatures": "^5.1.0"
+  },
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "include": [
+      "lib/**"
+    ],
+    "reporter": [
+      "text",
+      "cobertura",
+      "html"
+    ]
+  }
+}
